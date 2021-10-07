@@ -52,9 +52,7 @@ const Reports = () => {
     { label: "reason", key: "reason" },
     { label: "signature", key: "signature" },
     { label: "Current_Brand", key: "Current_Brand" },
-    { label: "watched_av", key: "watched_av" },
-    { label: "sales_status", key: "sales_status" },
-    { label: "brand", key: "brand" },
+    { label: "build_city", key: "build_city" },
     { label: "for_d", key: "for_d" },
     { label: "agentID", key: "agentID" },
     { label: "qcBy", key: "qcChecked" },
@@ -107,7 +105,7 @@ const Reports = () => {
                     <CSVLink
                       headers={headers}
                       title="Export data to CSV"
-                      filename={`JTI_ONE_To_One_${date?.date}.csv`}
+                      filename={`JTI_Teaser_${date?.date}.csv`}
                       data={downloaded}
                     >
                       `Download_${date?.date}`
@@ -127,7 +125,7 @@ const Reports = () => {
           <CSVLink
             headers={headers}
             title="Export data to CSV"
-            filename={"JTI_ONE_To_One.csv"}
+            filename={"JTI_Teaser.csv"}
             data={report}
           >
             Download

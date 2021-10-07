@@ -33,10 +33,11 @@ const LeadGenerate = () => {
     fetch("http://192.168.10.11:5030/initialLead?initDate=" + initialDate)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setInitialLeads(
           data
             .map((x) => {
-              return [...x.stick_sales, ...x.packet_sales];
+              return [...x.initLeads];
             })
             .flat()
             .map((a) => {
@@ -71,7 +72,7 @@ const LeadGenerate = () => {
         setRegenerate(
           data
             .map((x) => {
-              return [...x.new_stick_sales, ...x.new_packet_sales];
+              return [...x.newLead];
             })
             .flat()
             .map((a) => {
@@ -129,7 +130,7 @@ const LeadGenerate = () => {
                   <CSVLink
                     headers={headers}
                     title="Export data to CSV"
-                    filename="JTI_OneToOne_InitialLead.csv"
+                    filename="JTI_Teaser_InitialLead.csv"
                     data={initialLeads}
                   >
                     Download
@@ -177,7 +178,7 @@ const LeadGenerate = () => {
                   <CSVLink
                     headers={headers}
                     title="Export data to CSV"
-                    filename="JTI_regenerateLead.csv"
+                    filename="JTI_Teaser_regenerateLead.csv"
                     data={regenerate}
                   >
                     Download
